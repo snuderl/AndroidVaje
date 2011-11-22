@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AndroidVaja3Activity!</string>
+    <string name="app_name">AndroidVaja3</string>
+    <string name="jsonButton">JSON</string>
+    <string name="xmlButton">XML</string>
+
+</resources>
