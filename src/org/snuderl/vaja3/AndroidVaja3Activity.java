@@ -1,7 +1,17 @@
 package org.snuderl.vaja3;
 
 
-import com.google.gson.Gson;
+
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+import org.json.simple.parser.ContainerFactory;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,7 +51,8 @@ public class AndroidVaja3Activity extends Activity {
 				TextView tw1 = (TextView)findViewById(R.id.queryText);
 				String query = (tw1).getText().toString();
 				String response = request(query, RestClient.Response.JSON);
-				Gson gson = new Gson();
+				
+				
 				tw1.setText(response);
 				
 			}
