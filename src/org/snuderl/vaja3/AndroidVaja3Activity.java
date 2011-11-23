@@ -34,7 +34,20 @@ public class AndroidVaja3Activity extends Activity {
 				TextView tw1 = (TextView)findViewById(R.id.queryText);
 				String query = (tw1).getText().toString();
 				String response = request(query, RestClient.Response.XML);
-				tw1.setText(response);
+				XMLParser parser = new XMLParser();
+				Vreme vreme = parser.parse(response);
+				
+				
+				if(vreme!=null){
+					StringBuilder rezultat = new StringBuilder();
+					rezultat.append("Iskalni niz: ");
+					rezultat.append(vreme.query+".\n");
+					rezultat.append("Trenutna temperatura je: " + vreme.temp + "°C");
+					
+
+					TextView tw2 = (TextView)findViewById(R.id.textView1);
+					tw2.setText(rezultat);
+				}
 				
 			}
 		});

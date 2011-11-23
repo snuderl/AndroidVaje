@@ -8,6 +8,6 @@ package org.snuderl.vaja3;
  *
  */
 public class Vreme {
-	public int temp;
+	public int temp=0;
 	public String query;
 }
