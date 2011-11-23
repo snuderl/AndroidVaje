@@ -8,10 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.json.simple.parser.ContainerFactory;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -51,9 +47,20 @@ public class AndroidVaja3Activity extends Activity {
 				TextView tw1 = (TextView)findViewById(R.id.queryText);
 				String query = (tw1).getText().toString();
 				String response = request(query, RestClient.Response.JSON);
+				JsonParser parser = new JsonParser();
+				Vreme vreme = parser.parse(response);
 				
 				
-				tw1.setText(response);
+				if(vreme!=null){
+					StringBuilder rezultat = new StringBuilder();
+					rezultat.append("Iskalni niz: ");
+					rezultat.append(vreme.query+".\n");
+					rezultat.append("Trenutna temperatura je: " + vreme.temp + "°C");
+					
+
+					TextView tw2 = (TextView)findViewById(R.id.textView1);
+					tw2.setText(rezultat);
+				}
 				
 			}
 		});
