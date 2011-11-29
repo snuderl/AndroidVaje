@@ -8,7 +8,6 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
 import android.sax.Element;
-import android.sax.EndElementListener;
 import android.sax.EndTextElementListener;
 import android.sax.RootElement;
 import android.util.Xml;
